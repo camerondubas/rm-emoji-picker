@@ -65,15 +65,8 @@ export default class EmojiEditor {
 
         if(this._is_content_editable){
             let node;
-            if(EmojiEditor.supportsUnified()){
-                node = EmojiEditor.pasteTextAtCaret(emoji.getCharacter());
-                EmojiEditor.selectElement(node);
-                this.cursor_position = EmojiEditor.saveSelection();
-            }
-            else {
-                node = EmojiEditor.pasteHtml(emoji.getHtml());
-                this.cursor_position = EmojiEditor.saveSelection();
-            }
+            node = EmojiEditor.pasteHtml(emoji.getHtml());
+            this.cursor_position = EmojiEditor.saveSelection();
 
             $(this._input).trigger('change').trigger('input');
 

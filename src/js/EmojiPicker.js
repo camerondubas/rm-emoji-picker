@@ -175,7 +175,7 @@ export default class EmojiPicker {
      */
     static render(str) {
 
-        const converter = Converters.withEnvironment();
+        const converter = Converters.withImage();
         //If the code is running on a mobile device, don't run replace_unified
         if(Converters.is_mobile){
             return converter.replace_colons(str);
